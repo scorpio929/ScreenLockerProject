@@ -1,4 +1,4 @@
-package app3.utils;
+package com.simon.wu.screenlocker.screenlocker.utils;
 
 import android.content.pm.ResolveInfo;
 

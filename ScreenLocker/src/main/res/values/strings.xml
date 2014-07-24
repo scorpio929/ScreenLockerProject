@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">ScreenLocker</string>
+    <string name="app_name">ScreenLock</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="choose_your_launcher">选择你当前正在使用的桌面</string>
+    <string name="set_default_launcher">设置本程序为默认桌面</string>
+    <string name="clear_default_launcher">清除默认桌面</string>
+    <string name="clear_finish">清理完成,请继续执行第二步</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enable_lockscreen">开启锁屏</string>
+    <string name="background_setting">背景设置</string>
+    <string name="lock_setting">锁屏设置</string>
+    <string name="user_feedback">用户反馈</string>
+    <string name="disable_lockscreen">关闭锁屏</string>
+    <string name="no_launcher">NO LAUNCHER FOUND</string>
+    <string name="title_activity_init_setting">InitSettingActivity</string>
+    <string name="title_activity_lock_screen">LockScreenActivity</string>
 
 </resources>

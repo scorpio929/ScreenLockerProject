@@ -1,4 +1,4 @@
-package app3.adapter;
+package com.simon.wu.screenlocker.screenlocker.adapter;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.simon.wu.screenlock.app3.R;
+import com.simon.wu.screenlocker.screenlocker.R;
 
 import java.util.List;
 

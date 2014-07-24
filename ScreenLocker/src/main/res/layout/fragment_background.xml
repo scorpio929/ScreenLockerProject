@@ -1,0 +1,17 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.BackgroundFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_content" />
+
+    <com.simon.wu.screenlocker.screenlocker.views.ScreenLockerBackground
+        android:id="@+id/background_pic"
+        android:layout_below="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</RelativeLayout>

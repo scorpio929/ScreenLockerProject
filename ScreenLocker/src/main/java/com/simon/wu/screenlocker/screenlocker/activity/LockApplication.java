@@ -1,4 +1,4 @@
-package app3.views;
+package com.simon.wu.screenlocker.screenlocker.activity;
 
 import android.app.ActivityManager;
 import android.app.Application;
@@ -10,14 +10,13 @@ import android.content.IntentFilter;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.simon.wu.screenlock.app3.MainActivity;
-import com.simon.wu.screenlock.app3.utils.Constans;
-import com.simon.wu.screenlock.app3.utils.HomeWatcher;
+import com.simon.wu.screenlocker.screenlocker.tools.HomeWatcher;
+import com.simon.wu.screenlocker.screenlocker.utils.Constans;
 
 import java.util.List;
 
 /**
- * Created by Administrator on 2014/7/15.
+ * Created by Simon.Wu on 2014/7/15.
  */
 public class LockApplication extends Application {
     private BroadcastReceiver screenReceiver = new BroadcastReceiver() {
@@ -26,7 +25,7 @@ public class LockApplication extends Application {
             if (intent.getAction().equals("android.intent.action.SCREEN_OFF")) {
                 Toast.makeText(context, "screen is off", Toast.LENGTH_SHORT).show();
                 System.out.println("screen is off");
-                startActivity(new Intent(context, MainActivity.class).putExtra(Constans.START_SCREEN_SAVER_TYPE, 1).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                startActivity(new Intent(context, LockScreenActivity.class).putExtra(Constans.START_SCREEN_SAVER_TYPE, 3).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
             } else if (intent.getAction().equals("android.intent.action.SCREEN_ON")) {
                 Toast.makeText(context, "screen is on", Toast.LENGTH_SHORT).show();
                 System.out.println("screen is on");
@@ -76,7 +75,7 @@ public class LockApplication extends Application {
         List<ActivityManager.RunningTaskInfo> taskInfo = am.getRunningTasks(1);
         Log.d("topActivity", "CURRENT Activity ::" + taskInfo.get(0).topActivity.getClassName());
         ComponentName componentInfo = taskInfo.get(0).topActivity;
-        Intent intent = new Intent(this, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        Intent intent = new Intent(this, LockScreenActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 

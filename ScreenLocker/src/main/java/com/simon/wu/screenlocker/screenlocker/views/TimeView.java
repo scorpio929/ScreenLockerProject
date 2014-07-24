@@ -1,4 +1,4 @@
-package app3.views;
+package com.simon.wu.screenlocker.screenlocker.views;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -9,8 +9,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.simon.wu.screenlock.app3.R;
-import com.simon.wu.screenlock.app3.utils.TimerManager;
+import com.simon.wu.screenlocker.screenlocker.R;
+import com.simon.wu.screenlocker.screenlocker.tools.TimerManager;
+
 
 /**
  * TODO: document your custom view class.

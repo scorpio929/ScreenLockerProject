@@ -1,4 +1,4 @@
-package app3.utils;
+package com.simon.wu.screenlocker.screenlocker.tools;
 
 import java.util.Calendar;
 

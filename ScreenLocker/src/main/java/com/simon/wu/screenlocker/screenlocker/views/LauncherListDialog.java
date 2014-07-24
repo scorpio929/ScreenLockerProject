@@ -1,4 +1,4 @@
-package app3.views;
+package com.simon.wu.screenlocker.screenlocker.views;
 
 
 import android.content.ComponentName;
@@ -12,9 +12,9 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.simon.wu.screenlock.app3.R;
-import com.simon.wu.screenlock.app3.adapter.LauncherAdapter;
-import com.simon.wu.screenlock.app3.utils.LocalData;
+import com.simon.wu.screenlocker.screenlocker.R;
+import com.simon.wu.screenlocker.screenlocker.adapter.LauncherAdapter;
+import com.simon.wu.screenlocker.screenlocker.utils.LocalData;
 
 import java.util.List;
 

@@ -15,6 +15,35 @@
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="right|bottom"></LinearLayout>
+            android:layout_gravity="right|bottom">
+
+            <Button
+                android:id="@+id/lock_enable_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/main_button"
+                android:text="@string/enable_lockscreen" />
+
+            <Button
+                android:id="@+id/background_setting_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/main_button"
+                android:text="@string/background_setting" />
+
+            <Button
+                android:id="@+id/lock_setting_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/main_button"
+                android:text="@string/lock_setting" />
+
+            <Button
+                android:id="@+id/feedback_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/main_button"
+                android:text="@string/user_feedback" />
+        </LinearLayout>
     </FrameLayout>
 </RelativeLayout>

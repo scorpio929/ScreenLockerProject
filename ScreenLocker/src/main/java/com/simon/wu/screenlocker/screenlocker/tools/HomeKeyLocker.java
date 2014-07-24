@@ -1,4 +1,4 @@
-package app3.utils;
+package com.simon.wu.screenlocker.screenlocker.tools;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -8,7 +8,7 @@ import android.view.MotionEvent;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 
-import com.simon.wu.screenlock.app3.R;
+import com.simon.wu.screenlocker.screenlocker.R;
 
 import static android.view.WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
 import static android.view.WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED;
