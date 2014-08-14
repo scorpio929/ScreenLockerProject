@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="D:\Android\AS\MetroProject\ScreenLocker\build\intermediates\pre-dexed\debug\classes-7f7027e25224b52996604ca0cc88c35c8a48f22a.jar"
+        jar="D:\Android\AS\MetroProject\ScreenLocker\build\intermediates\exploded-aar\com.android.support\appcompat-v7\19.1.0\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28"/>
+    <item
+        dex="D:\Android\AS\MetroProject\app2\build\intermediates\pre-dexed\debug\support-v4-19.1.0-d851921844f9c4b07ea378275f26a94d42d31cb6.jar"
+        jar="D:\Android\android-studio\sdk\extras\android\m2repository\com\android\support\support-v4\19.1.0\support-v4-19.1.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67"/>
+    <item
+        dex="D:\Android\AS\MetroProject\ScreenLocker\build\intermediates\pre-dexed\debug\butterknife-5.1.1-610d2d09d33efd0148960fce80d651b1f9327beb.jar"
+        jar="C:\Users\Administrator.M3JRGT7YEZVI5FE\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife\5.1.1\b3652dfd65ca0bcf18790ff1a1f7624af4cb2bb8\butterknife-5.1.1.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="b3652dfd65ca0bcf18790ff1a1f7624af4cb2bb8"/>
+    <item
+        dex="D:\Android\AS\MetroProject\app2\build\intermediates\pre-dexed\debug\classes-dc4c02f0f486d300fefedf975b981e68878d3df0.jar"
+        jar="D:\Android\AS\MetroProject\build\intermediates\exploded-aar\com.android.support\appcompat-v7\19.1.0\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28"/>
+    <item
+        dex="D:\Android\AS\MetroProject\app3\build\intermediates\pre-dexed\debug\classes-7d7c79c31da76a435c918485cf83cc96767c9a4a.jar"
+        jar="D:\Android\AS\MetroProject\app3\build\intermediates\exploded-aar\com.android.support\appcompat-v7\19.1.0\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28"/>
+    <item
+        dex="D:\Android\AS\MetroProject\UILTest\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.2-1b2603c49eb788cff28955498e6fef223b8a7d63.jar"
+        jar="C:\Users\Administrator.M3JRGT7YEZVI5FE\.gradle\caches\modules-2\files-2.1\com.nostra13.universalimageloader\universal-image-loader\1.9.2\9e025bc5b84968e7d6ac765e660a70b3e5a87432\universal-image-loader-1.9.2.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="9e025bc5b84968e7d6ac765e660a70b3e5a87432"/>
+
+</pre-dex-items>

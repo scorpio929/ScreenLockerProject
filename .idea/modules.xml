@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MetroProject.iml" filepath="$PROJECT_DIR$/MetroProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ScreenLocker/ScreenLocker.iml" filepath="$PROJECT_DIR$/ScreenLocker/ScreenLocker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ScreenLockerProject.iml" filepath="$PROJECT_DIR$/ScreenLockerProject.iml" />
+    </modules>
+  </component>
+</project>
+
