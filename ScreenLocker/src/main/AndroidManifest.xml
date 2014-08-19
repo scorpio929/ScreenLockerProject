@@ -22,15 +22,14 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
         <activity
             android:name=".activity.InitSettingActivity"
             android:label="@string/title_activity_init_setting"
-            android:launchMode="singleTop"></activity>
+            android:launchMode="singleTop"/>
         <activity
             android:name=".activity.LockScreenActivity"
-            android:label="@string/title_activity_lock_screen"
             android:excludeFromRecents="true"
+            android:label="@string/title_activity_lock_screen"
             android:launchMode="singleInstance">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -39,6 +38,12 @@
                 <category android:name="android.intent.category.HOME"/>
             </intent-filter>
         </activity>
+
+        <service
+            android:name=".activity.ScreenLockerService"
+            android:exported="false"
+            >
+        </service>
     </application>
 
 </manifest>

@@ -41,14 +41,9 @@ public class LockScreenActivity extends FragmentActivity implements BackgroundFr
     }
 
     private void jumpCustomHome() {
-        //获得当前使用launcher
-        if (LocalData.currentLauncher == null) {
-            Toast.makeText(this, "no localdata currentLauncher", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        ResolveInfo temp = LocalData.currentLauncher;
+        //跳转当前使用launcher
         Intent intent = new Intent(Intent.ACTION_MAIN);
-        intent.setComponent(new ComponentName(temp.activityInfo.packageName, temp.activityInfo.name));
+        intent.setComponent(new ComponentName(LocalData.getmCustomLauncherPackage(this), LocalData.getmCustomLauncherName(this)));
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }

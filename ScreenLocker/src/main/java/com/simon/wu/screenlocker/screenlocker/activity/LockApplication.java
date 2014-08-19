@@ -2,6 +2,7 @@ package com.simon.wu.screenlocker.screenlocker.activity;
 
 import android.app.ActivityManager;
 import android.app.Application;
+import android.app.Service;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
@@ -10,8 +11,10 @@ import android.content.IntentFilter;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.simon.wu.screenlocker.screenlocker.MainActivity;
 import com.simon.wu.screenlocker.screenlocker.tools.HomeWatcher;
 import com.simon.wu.screenlocker.screenlocker.utils.Constans;
+import com.simon.wu.screenlocker.screenlocker.utils.LocalData;
 
 import java.util.List;
 
@@ -19,30 +22,17 @@ import java.util.List;
  * Created by Simon.Wu on 2014/7/15.
  */
 public class LockApplication extends Application {
-    private BroadcastReceiver screenReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            if (intent.getAction().equals("android.intent.action.SCREEN_OFF")) {
-                Toast.makeText(context, "screen is off", Toast.LENGTH_SHORT).show();
-                System.out.println("screen is off");
-                startActivity(new Intent(context, LockScreenActivity.class).putExtra(Constans.START_SCREEN_SAVER_TYPE, Constans.StartScreenSaverType.SCREEN_OFF.getValue()).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-            } else if (intent.getAction().equals("android.intent.action.SCREEN_ON")) {
-                Toast.makeText(context, "screen is on", Toast.LENGTH_SHORT).show();
-                System.out.println("screen is on");
-            }
-        }
-    };
+
     public static HomeWatcher mHomeWatcher;
     public static boolean isLockScreenShowing;
 
     @Override
     public void onCreate() {
         super.onCreate();
-
-        IntentFilter i = new IntentFilter();
-        i.addAction("android.intent.action.SCREEN_OFF");
-        i.addAction("android.intent.action.SCREEN_ON");
-        registerReceiver(screenReceiver, i);
+        //开启服务,启动屏幕点亮/关闭监听
+        if (LocalData.isIsLockEnabled(this)) {
+            ScreenLockerService.startActionStart(this, null, null);
+        }
 
         //屏蔽系统锁屏
         //KeyguardManager km = (KeyguardManager) getSystemService(Context.KEYGUARD_SERVICE);
@@ -68,21 +58,10 @@ public class LockApplication extends Application {
         mHomeWatcher.startWatch();
     }
 
-    private void jumpRecent() {
-        //获取当前屏幕显示Activity
-        ActivityManager am = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
-        // get the info from the currently running task
-        List<ActivityManager.RunningTaskInfo> taskInfo = am.getRunningTasks(1);
-        Log.d("topActivity", "CURRENT Activity ::" + taskInfo.get(0).topActivity.getClassName());
-        ComponentName componentInfo = taskInfo.get(0).topActivity;
-        Intent intent = new Intent(this, LockScreenActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-    }
-
     @Override
     public void onTerminate() {
         super.onTerminate();
-        unregisterReceiver(screenReceiver);
         mHomeWatcher.stopWatch();
+        stopService(new Intent(this, ScreenLockerService.class));
     }
 }

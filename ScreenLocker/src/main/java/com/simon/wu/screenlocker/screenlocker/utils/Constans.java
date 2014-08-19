@@ -11,6 +11,8 @@ public class Constans {
 
     public static final String IS_LOCK_ENABLED = "is_lock_enabled";
 
+    public static final int IS_HOME_BLOCKED = 1;
+
     public enum StartScreenSaverType {
         INIT_SETTING(1),
         PRESS_HOME(2),

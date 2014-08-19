@@ -17,5 +17,6 @@
     <string name="no_launcher">NO LAUNCHER FOUND</string>
     <string name="title_activity_init_setting">InitSettingActivity</string>
     <string name="title_activity_lock_screen">LockScreenActivity</string>
+    <string name="setting_complete">设置已完成</string>
 
 </resources>
