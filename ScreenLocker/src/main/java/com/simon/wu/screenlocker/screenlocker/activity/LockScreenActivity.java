@@ -1,6 +1,8 @@
 package com.simon.wu.screenlocker.screenlocker.activity;
 
+import android.app.ActivityManager;
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
@@ -23,13 +25,13 @@ public class LockScreenActivity extends FragmentActivity implements BackgroundFr
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         getStartType(getIntent());
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         //屏蔽掉系统的锁屏
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lock_screen);
         initViews();
     }
@@ -38,7 +40,7 @@ public class LockScreenActivity extends FragmentActivity implements BackgroundFr
         getSupportFragmentManager().beginTransaction().add(R.id.background_framelayout, BackgroundFragment.newInstance()).commit();
     }
 
-    private void jumpHome() {
+    private void jumpCustomHome() {
         //获得当前使用launcher
         if (LocalData.currentLauncher == null) {
             Toast.makeText(this, "no localdata currentLauncher", Toast.LENGTH_SHORT).show();
@@ -47,7 +49,6 @@ public class LockScreenActivity extends FragmentActivity implements BackgroundFr
         ResolveInfo temp = LocalData.currentLauncher;
         Intent intent = new Intent(Intent.ACTION_MAIN);
         intent.setComponent(new ComponentName(temp.activityInfo.packageName, temp.activityInfo.name));
-        Log.d("launcher", "CURRENT Launcher ::" + temp.activityInfo.packageName + "," + temp.activityInfo.name);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
@@ -59,11 +60,15 @@ public class LockScreenActivity extends FragmentActivity implements BackgroundFr
     }
 
     private void getStartType(Intent intent) {
-        //判断启动来源
-        int startFlag = intent.getIntExtra(Constans.START_SCREEN_SAVER_TYPE, 2);
-        if (startFlag == 2 && !((LockApplication) getApplication()).isLockScreenShowing) {
-            jumpHome();
-        } else if (startFlag == 1) {
+        //判断启动来源,没有Extra则为按下Home键
+        int startFlag = intent.getIntExtra(Constans.START_SCREEN_SAVER_TYPE, Constans.StartScreenSaverType.PRESS_HOME.getValue());
+        if (startFlag == Constans.StartScreenSaverType.PRESS_HOME.getValue() && !((LockApplication) getApplication()).isLockScreenShowing) {
+            jumpCustomHome();
+            finish();
+        } else if (((LockApplication) getApplication()).isLockScreenShowing) {
+
+        } else if (startFlag == Constans.StartScreenSaverType.INIT_SETTING.getValue()) {
+            startActivity(new Intent(this, InitSettingActivity.class));
             finish();
         }
         Log.v("Intent", "startFlag : " + startFlag + "," + intent.toString());
@@ -107,5 +112,15 @@ public class LockScreenActivity extends FragmentActivity implements BackgroundFr
     @Override
     public void onFragmentInteraction() {
         finish();
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (!hasFocus) {
+            ActivityManager am = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+            am.moveTaskToFront(getTaskId(), ActivityManager.MOVE_TASK_WITH_HOME);
+            sendBroadcast(new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS));
+        }
     }
 }

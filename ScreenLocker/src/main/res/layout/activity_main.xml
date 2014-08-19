@@ -1,8 +1,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".MainActivity">
 
     <FrameLayout
         android:layout_width="fill_parent"
@@ -22,28 +22,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/main_button"
-                android:text="@string/enable_lockscreen" />
+                android:text="@string/enable_lockscreen"/>
 
             <Button
                 android:id="@+id/background_setting_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/main_button"
-                android:text="@string/background_setting" />
+                android:text="@string/background_setting"/>
 
             <Button
                 android:id="@+id/lock_setting_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/main_button"
-                android:text="@string/lock_setting" />
+                android:text="@string/lock_setting"/>
 
             <Button
                 android:id="@+id/feedback_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/main_button"
-                android:text="@string/user_feedback" />
+                android:text="@string/user_feedback"/>
         </LinearLayout>
     </FrameLayout>
 </RelativeLayout>

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="40dp">
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
 
     <ImageView
         android:id="@+id/icon"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="20dp" />
+        android:layout_marginLeft="20dp"/>
 
     <TextView
         android:id="@+id/launcher_name"
@@ -17,6 +17,6 @@
         android:gravity="center_vertical"
         android:layout_toRightOf="@+id/icon"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp" />
+        android:layout_marginRight="20dp"/>
 
 </RelativeLayout>

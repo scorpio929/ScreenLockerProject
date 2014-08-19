@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10.0dip"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"/>
 
         <TextView
             android:textSize="16.0sp"
@@ -27,6 +27,6 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20.0dip"
             android:layout_below="@id/tvtime"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"/>
     </RelativeLayout>
 </merge>

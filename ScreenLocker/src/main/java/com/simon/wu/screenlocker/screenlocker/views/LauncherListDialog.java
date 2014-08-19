@@ -1,8 +1,6 @@
 package com.simon.wu.screenlocker.screenlocker.views;
 
 
-import android.content.ComponentName;
-import android.content.Intent;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
@@ -14,7 +12,8 @@ import android.widget.ListView;
 
 import com.simon.wu.screenlocker.screenlocker.R;
 import com.simon.wu.screenlocker.screenlocker.adapter.LauncherAdapter;
-import com.simon.wu.screenlocker.screenlocker.utils.LocalData;
+import com.simon.wu.screenlocker.screenlocker.utils.Constans;
+import com.simon.wu.screenlocker.screenlocker.utils.PreferencesUtils;
 
 import java.util.List;
 
@@ -52,7 +51,6 @@ public class LauncherListDialog extends DialogFragment {
     }
 
     public LauncherListDialog() {
-        // Required empty public constructor
     }
 
     @Override
@@ -86,10 +84,11 @@ public class LauncherListDialog extends DialogFragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //跳到当前launcher
                 ResolveInfo temp = appList.get(position);
-                LocalData.currentLauncher = temp;
-                Intent intent = new Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_LAUNCHER).addCategory(Intent.CATEGORY_HOME);
-                intent.setComponent(new ComponentName(temp.activityInfo.packageName, temp.activityInfo.name));
-                startActivity(intent);
+                PreferencesUtils.putString(getActivity(), Constans.CUSTOM_LAUNCHER_PACKAGE, temp.activityInfo.packageName);
+                PreferencesUtils.putString(getActivity(), Constans.CUSTOM_LAUNCHER_NAME, temp.activityInfo.name);
+                //Intent intent = new Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_LAUNCHER).addCategory(Intent.CATEGORY_HOME);
+                //intent.setComponent(new ComponentName(temp.activityInfo.packageName, temp.activityInfo.name));
+                //startActivity(intent);
                 LauncherListDialog.fragment.dismiss();
             }
         });

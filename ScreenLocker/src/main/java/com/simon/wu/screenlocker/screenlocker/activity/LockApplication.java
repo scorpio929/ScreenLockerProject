@@ -25,7 +25,7 @@ public class LockApplication extends Application {
             if (intent.getAction().equals("android.intent.action.SCREEN_OFF")) {
                 Toast.makeText(context, "screen is off", Toast.LENGTH_SHORT).show();
                 System.out.println("screen is off");
-                startActivity(new Intent(context, LockScreenActivity.class).putExtra(Constans.START_SCREEN_SAVER_TYPE, 3).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                startActivity(new Intent(context, LockScreenActivity.class).putExtra(Constans.START_SCREEN_SAVER_TYPE, Constans.StartScreenSaverType.SCREEN_OFF.getValue()).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
             } else if (intent.getAction().equals("android.intent.action.SCREEN_ON")) {
                 Toast.makeText(context, "screen is on", Toast.LENGTH_SHORT).show();
                 System.out.println("screen is on");
@@ -60,7 +60,7 @@ public class LockApplication extends Application {
             @Override
             public void onHomeLongPressed() {
                 if (isLockScreenShowing) {
-                    jumpRecent();
+                    // jumpRecent();
                 }
                 Log.e("mHomeWatcher", "onHomeLongPressed");
             }
